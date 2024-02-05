@@ -1,1 +1,1 @@
-export const baseURL = 'https://businessboosters.club/public/api';
+export const baseURL = 'https://agsdev.online/public/api';

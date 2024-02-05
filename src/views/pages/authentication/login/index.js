@@ -225,7 +225,7 @@ const Login = () => {
                                     
                                     <Grid item className={classes.icon}>
                                         <RouterLink to="#">
-                                            <img alt="Auth method" src={logo} width="auto" />
+                                            <img alt="Auth method" src={logo} width="auto" style={{width:'100%'}} />
                                         </RouterLink>
                                     </Grid>
                                 </Grid>

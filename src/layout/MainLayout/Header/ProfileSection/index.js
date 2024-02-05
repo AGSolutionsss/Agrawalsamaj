@@ -208,20 +208,7 @@ const ProfileSection = () => {
                                             </Grid>
                                         </Grid>
                                         <Divider />
-                                        <List component="nav" className={classes.navContainer}>
-                                            <ListItem
-                                                className={classes.listItem}
-                                                sx={{borderRadius: customization.borderRadius + 'px'}}
-                                                button
-                                                selected={selectedIndex === 4}
-                                                onClick={(e) => handlePassword(e)}
-                                            >
-                                                <ListItemIcon>
-                                                    <IconFiles stroke={1.5} size="1.3rem" />
-                                                </ListItemIcon>
-                                                <ListItemText primary={<Typography variant="body2">Change Password</Typography>} />
-                                            </ListItem>
-                                        </List> 
+                                        
                                         <PerfectScrollbar className={classes.ScrollHeight}>
  
                                             <Divider />

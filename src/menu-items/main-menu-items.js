@@ -99,64 +99,170 @@ const icons = {
     IconBasket: IconBasket
 };
 
-const menuItems = {
-    items: [
-        {
-            id: 'dashboard',
-            title: <FormattedMessage id="dashboard" />,
-            type: 'group',
-            children: [
-                {
-                    id: 'dash-default',
-                    title: <FormattedMessage id="Dashboard" />,
-                    type: 'item',
-                    url: '/dashboard',
-                    icon: icons['IconDashboard'],
-                    breadcrumbs: false
-                },
-                {
-                    id: 'users-profile',
-                    title: <FormattedMessage id="Profile" />,
-                    type: 'item',
-                    url: '/users-profile',
-                    icon: icons['IconUserCheck'],
+
+
+    const menuItems1 = {
+        items: [
+            {
+                
+                id: 'dashboard',
+                title: <FormattedMessage id="dashboard" />,
+                type: 'group',
+                children: [
+                    {
+                        id: 'dash-default',
+                        title: <FormattedMessage id="Dashboard" />,
+                        type: 'item',
+                        url: '/dashboard',
+                        icon: icons['IconDashboard'],
+                        breadcrumbs: false
+                    },
+                    {
+                        id: 'commingsoon',
+                        title: <FormattedMessage id="Profile" />,
+                        type: 'item',
+                        url: '/profile-edit',
+                        icon: icons['IconUserCheck'],
+                        
+                    },
+                    {
+                        id: 'member',
+                        title: <FormattedMessage id="Family Member" />,
+                        type: 'item',
+                        url: '/family-member-list',
+                        icon: icons['IconUserCheck'],
+                        
+                    },
+                ]
+            },
+            {
+                id: 'utilities',
+                title: <FormattedMessage id="Events" />,
+                type: 'group',
+                children: [
+                    {
+                        id: 'sample-page',
+                        title: <FormattedMessage id="Samaj" />,
+                        type: 'item',
+                        url: '/samaj-events',
+                        icon: icons['IconBrandChrome']
+                    },
+                    {
+                        id: 'icons1',
+                        title: <FormattedMessage id="Mahila" />,
+                        type: 'item',
+                        url: '/mahila-events',
+                        icon: icons['IconPencil'],
+                        
+                    },
+                    {
+                        id: 'icons',
+                        title: <FormattedMessage id="Developer" />,
+                        type: 'item',
+                        url: '/developer',
+                        icon: icons['IconCalendar'],
+                        
+                    },
                     
-                },
-            ]
-        },
-{
-    id: 'utilities',
-    title: <FormattedMessage id="Website" />,
-    type: 'group',
-    children: [
-        {
-            id: 'sample-page',
-            title: <FormattedMessage id="About Us" />,
-            type: 'item',
-            url: '/users-about',
-            icon: icons['IconBrandChrome']
-        },
-        {
-            id: 'icons1',
-            title: <FormattedMessage id="Portfolio" />,
-            type: 'item',
-            url: '/users-slider',
-            icon: icons['IconPencil'],
-            
-        },
-        {
-            id: 'icons',
-            title: <FormattedMessage id="Enquiry" />,
-            type: 'item',
-            url: '/users-enquiry',
-            icon: icons['IconCalendar'],
-            
-        },
+                ]
+            },
         
-    ]
-},
-     
-    ]
-};
+        ]
+    };
+
+    const menuItems2 = {
+        items: [
+            {
+                
+                id: 'dashboard',
+                title: <FormattedMessage id="dashboard" />,
+                type: 'group',
+                children: [
+                    {
+                        id: 'dash-default',
+                        title: <FormattedMessage id="Dashboard" />,
+                        type: 'item',
+                        url: '/dashboard',
+                        icon: icons['IconDashboard'],
+                        breadcrumbs: false
+                    },
+                    {
+                        id: 'life-time-members',
+                        title: <FormattedMessage id="Life Time Members" />,
+                        type: 'item',
+                        url: '/life-time-members',
+                        icon: icons['IconUser'],
+                        
+                    },
+                    {
+                        id: 'members',
+                        title: <FormattedMessage id="Patron Members" />,
+                        type: 'item',
+                        url: '/patron-members',
+                        icon: icons['IconUserCheck'],
+                        
+                    },
+                    {
+                        id: 'members1',
+                        title: <FormattedMessage id="Pending MID" />,
+                        type: 'item',
+                        url: '/pending-mid',
+                        icon: icons['IconUserCheck'],
+                        
+                    },
+                    {
+                        id: 'members2',
+                        title: <FormattedMessage id="New Register" />,
+                        type: 'item',
+                        url: '/new-register',
+                        icon: icons['IconUserCheck'],
+                        
+                    },
+                ]
+            },
+            {
+                id: 'utilities',
+                title: <FormattedMessage id="Events" />,
+                type: 'group',
+                children: [
+                    {
+                        id: 'sample-page',
+                        title: <FormattedMessage id="Samaj" />,
+                        type: 'item',
+                        url: '/samaj-events',
+                        icon: icons['IconBrandChrome']
+                    },
+                    {
+                        id: 'icons1',
+                        title: <FormattedMessage id="Mahila" />,
+                        type: 'item',
+                        url: '/mahila-events',
+                        icon: icons['IconPencil'],
+                        
+                    },
+                    {
+                        id: 'icons',
+                        title: <FormattedMessage id="Developer" />,
+                        type: 'item',
+                        url: '/developer',
+                        icon: icons['IconCalendar'],
+                        
+                    },
+                    
+                ]
+            },
+        
+        ]
+    };
+
+const menuItems = localStorage.getItem('user_type_id') === '1' ? menuItems1 : menuItems2;
 
 export default menuItems;
+
+
+ 
+
+
+    
+
+

@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const UserAbout = () => {
+const Comingsoon = () => {
     const classes = useStyles();
     let history = useHistory();
     const [about, setAbout] = useState({
@@ -214,73 +214,11 @@ const UserAbout = () => {
                         <CardContent>
                             <form id="addIndiv" autoComplete="off">
                                 <Grid item xs={12}>
-                                    <Grid container spacing={gridSpacing}>
-                                        <Grid item lg={12} md={6} sm={6} xs={12}>
-                                            <TextField
-                                                id="outlined-multiline-static"
-                                                label="About Us"
-                                                className={classes.notchedOutline}
-                                                required
-                                                name="product_about_us"
-                                                value={about.product_about_us}
-                                                onChange={e => onInputChange(e)}
-                                                multiline
-                                                rows={5}
-                                                fullWidth
-                                            />
-                                            
-                                        </Grid>
+                                    <Grid container spacing={gridSpacing} style={{justifyContent:'center'}}>
+                                        <h1>Coming soon</h1>
                                     </Grid>
                                 </Grid>
-                                <Box mt={2}>
-                                    <Grid item xs={12}>
-                                        <Grid container spacing={gridSpacing}>
-                                            {check == false && (
-                                            <Grid item lg={2} md={6} sm={6} xs={12}>
-                                                <Button
-                                                    fullWidth
-                                                    size="large"
-                                                    type="submit"
-                                                    variant="contained"
-                                                    className={classes.login}
-                                                    onClick={(e) => onUpdate(e)}
-                                                >
-                                                Update
-                                                </Button>
-                                            </Grid>
-                                            )}
-                                            {check == true && (
-                                                <Grid item lg={2} md={6} sm={6} xs={12}>
-                                                    <Button
-                                                        fullWidth
-                                                        size="large"
-                                                        type="submit"
-                                                        variant="contained"
-                                                        className={classes.login}
-                                                        onClick={(e) => onSubmit(e)}
-                                                    >
-                                                    Submit
-                                                    </Button>
-                                                </Grid>
-                                            )}
-                                            
-                                                <Grid item lg={2} md={6} sm={6} xs={12}>
-                                                    <Link to="dashboard">
-                                                        <Button
-                                                            fullWidth
-                                                            size="large"
-                                                            type="buton"
-                                                            variant="contained"
-                                                            className={classes.login2}
-                                                        >
-                                                        Cancel
-                                                        </Button>
-                                                    </Link>
-                                                </Grid>
-                                            
-                                        </Grid>
-                                    </Grid>
-                                </Box>
+                                
                             </form>
                         </CardContent>
                     </Card>
@@ -290,4 +228,4 @@ const UserAbout = () => {
     );
 };
 
-export default UserAbout;
+export default Comingsoon;

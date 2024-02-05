@@ -4,8 +4,8 @@ import MinimalLayout from './../layout/MinimalLayout';
 
 
 
-const AuthPassword = lazy(() => import('../views/pages/authentication/forgetpassword'));
 
+const Register = lazy(() => import('../views/pages/authentication/register/index'));
 
 const AuthenticationRoutes = () => {
     const location = useLocation();
@@ -14,13 +14,15 @@ const AuthenticationRoutes = () => {
         <Route
             path={[
                 
-                '/forget-password',
+                
+                '/register',
                 
             ]}
         >
             <MinimalLayout>
                 <Switch location={location} key={location.pathname}>
-                    <Route path="/forget-password" component={AuthPassword} />
+                    
+                    <Route path="/register" component={Register} />
                 </Switch>
             </MinimalLayout>
         </Route>

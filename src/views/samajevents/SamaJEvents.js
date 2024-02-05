@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Grid, makeStyles } from '@material-ui/core';
 import MUIDataTable from "mui-datatables";
 import {baseURL} from "../../api/index";
-
+import Moment from 'moment';
 
 const useStyles = makeStyles((theme) => ({
     active: {
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const UserEnquiry = () => {
+const SamajEvents = () => {
     const classes = useStyles();
     const [userList, setUserList] = useState([]);
 
@@ -43,19 +43,21 @@ const UserEnquiry = () => {
         };     
 
 
-        fetch(baseURL+'/panel-fetch-enquiry', requestOptions)
+        fetch(baseURL+'/fetch-web-events/samaj', requestOptions)
         .then(response => response.json())
         .then(data => {
-            let res = data.enquiry;
+            let res = data.eventsdata;
             let tempRows = [];
             for (let i = 0; i < res.length; i++) {
           
                 tempRows.push([
                     i+1,
-                    res[i]["contact_name"],
-                    res[i]["contact_email"],
-                    res[i]["contact_mobile"],
-                    res[i]["contact_message"],
+                    <img src={(res[i]["event_image"]  === null || res[i]["event_image"] === '' ? "https://agrawalsamaj.co/app-images/event/no_image.jpg" : "https://agrawalsamaj.co/app-images/event/"+res[i]["event_image"])} style={{width:'40px',height:'40px'}}/>,
+                    res[i]["event_name"],
+                    res[i]["event_des"],
+                    Moment(res[i]["event_date"]).format('DD-MM-YYYY')+' - '+res[i]["event_time"],
+                    res[i]["event_address"],
+                    res[i]["id"],
                 ]);
               
             }
@@ -78,34 +80,44 @@ const UserEnquiry = () => {
               download:false,
             }
         },
-        "Full Name",
-        "Email",
-        "Mobile",
-        "Message",
+        {
+            name: "",
+            options: {
+              filter: false,
+              print:false,
+              download:false,
+            }
+        },
+        "Evnt Name",
+        "Description",
+        "Date/Time",
+        "Address",
     ]
        
     return (
         <>
-        <Grid container>
-            <Grid item xs={12}>
-                {userList.length > 0 && (
-                    <MUIDataTable
-                    data={userList}
-                    columns={columnData}
-                    options={option}
-                  
-                    />
-                )}
-                {userList.length <= 0 && (
-                    <MUIDataTable
-                    columns={columnData}
-                    options={option}
-                    />
-                )}
+         
+            <Grid container>
+                <Grid item xs={12}>
+                    {userList.length > 0 && (
+                        <MUIDataTable
+                        data={userList}
+                        columns={columnData}
+                        options={option}
+                    
+                        />
+                    )}
+                    {userList.length <= 0 && (
+                        <MUIDataTable
+                        columns={columnData}
+                        options={option}
+                        />
+                    )}
+                </Grid>
             </Grid>
-        </Grid>
+        
     </>
     );
 };
 
-export default UserEnquiry;
+export default SamajEvents;

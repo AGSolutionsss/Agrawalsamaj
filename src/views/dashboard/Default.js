@@ -7,8 +7,8 @@ import {baseURL} from "../../api/index";
 
 const Dashboard = () => {
 
-    const [total_active, settotalactive] = useState("");
-    const [total_inactive, settotalinactive] = useState("");
+    const [total_patron_life_member, settotal_patron_life_member] = useState("");
+    const [total_life_member, settotal_life_member] = useState("");
     
     useEffect(() => {
         var isLoggedIn = localStorage.getItem("login");
@@ -28,11 +28,11 @@ const Dashboard = () => {
                 'Authorization': 'Bearer '+theLoginToken
                 }             
         };     
-        fetch(baseURL+'/panel-dashboard', requestOptions)
+        fetch(baseURL+'/fetch-web-dashboard', requestOptions)
         .then(response => response.json())
         .then(data => {
-            settotalactive(data.total_active);
-            settotalinactive(data.total_inactive);
+            settotal_patron_life_member(data.total_patron_life_member);
+            settotal_life_member(data.total_life_member);
             
         }); 
     }, []);
@@ -43,33 +43,10 @@ const Dashboard = () => {
             <Grid item xs={12}>
                 <Grid container spacing={gridSpacing}>
                     <Grid item lg={4} md={6} sm={6} xs={12}>
-                        <EarningCard total_active={total_active}/>
+                        <EarningCard total_patron_life_member={total_patron_life_member}/>
                     </Grid>
                     <Grid item lg={4} md={6} sm={6} xs={12}>
-                        <TotalChartCard total_inactive={total_inactive}/>
-                    </Grid>
-                    <Grid item lg={4} md={6} sm={6} xs={12}>
-                        
-                    </Grid>
-                </Grid>
-            </Grid>
-            <Grid item xs={12}>
-                <Grid container spacing={gridSpacing}>
-                    <Grid item xs={12} sm={12} md={8}>
-                        
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={4}>
-                        <Grid container spacing={gridSpacing}>
-                            <Grid item sm={6} xs={12} md={6} lg={12}>
-                                
-                            </Grid>
-                            <Grid item sm={6} xs={12} md={6} lg={12}>
-                                
-                            </Grid>
-                            <Grid item sm={6} xs={12} md={6} lg={12}>
-                                
-                            </Grid>
-                        </Grid>
+                        <TotalChartCard total_life_member={total_life_member}/>
                     </Grid>
                 </Grid>
             </Grid>

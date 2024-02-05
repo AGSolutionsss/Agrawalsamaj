@@ -101,7 +101,7 @@ const EarningCard = (props) => {
                     <Grid item>
                         <Grid container alignItems="center">
                             <Grid item>
-                                <Typography className={classes.cardHeading}>{props.total_active}</Typography>
+                                <Typography className={classes.cardHeading}>{props.total_patron_life_member}</Typography>
                             </Grid>
                             <Grid item>
                                 <Avatar className={classes.avatarCricle}>
@@ -111,7 +111,7 @@ const EarningCard = (props) => {
                         </Grid>
                     </Grid>
                     <Grid item>
-                        <Typography className={classes.subHeading}>Active User</Typography>
+                        <Typography className={classes.subHeading}>Patron Members</Typography>
                     </Grid>
                 </Grid>
             </CardContent>

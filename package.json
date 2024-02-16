@@ -2,7 +2,7 @@
     "name": "agrawal-samaj-karnataka",
     "version": "1.0.0",
     "private": true,
-    "homepage": "https://agsdev.online/login",
+    "homepage": "https://login.agrawalsamaj.co",
     "dependencies": {
         "@emotion/react": "^11.1.5",
         "@emotion/styled": "^11.3.0",

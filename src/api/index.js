@@ -1,1 +1,1 @@
-export const baseURL = 'https://agsdev.online/public/api';
+export const baseURL = 'https://agrawalsamaj.co/public/api';

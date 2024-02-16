@@ -52,7 +52,7 @@ const MahilaEvents = () => {
           
                 tempRows.push([
                     i+1,
-                    <img src={(res[i]["event_image"]  === null || res[i]["event_image"] === '' ? "https://agrawalsamaj.co/app-images/event/no_image.jpg" : "https://agrawalsamaj.co/app-images/event/"+res[i]["event_image"])} style={{width:'40px',height:'40px'}}/>,
+                    <img src={(res[i]["event_image"]  === null || res[i]["event_image"] === '' ? "https://agrawalsamaj.co/public/app-images/event/no_image.jpg" : "https://agrawalsamaj.co/public/app-images/event/"+res[i]["event_image"])} style={{width:'40px',height:'40px'}}/>,
                     res[i]["event_name"],
                     res[i]["event_des"],
                     Moment(res[i]["event_date"]).format('DD-MM-YYYY')+' - '+res[i]["event_time"],

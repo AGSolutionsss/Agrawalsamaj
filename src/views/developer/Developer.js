@@ -79,7 +79,7 @@ const Developer = () => {
                                 <Grid item xs={12}>
                                     <Grid container spacing={gridSpacing} style={{justifyContent:'center'}}>
                                     <Grid item lg={12} md={12} sm={12} xs={12} style={{textAlign:'center'}}>
-                                        <img src={"https://agsdev.online/public/app_images/developer/"+developer.company_logo} alt="logo"/>
+                                        <img src={"https://agrawalsamaj.co/public/app_images/developer/"+developer.company_logo} alt="logo"/>
                                     </Grid>
                                         <Grid item lg={4} md={6} sm={6} xs={12}>
                                             Company : <span style={{fontWeight:'400',color:'#000'}}>{developer.company_name}</span>

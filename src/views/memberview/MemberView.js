@@ -139,10 +139,10 @@ const MemberView = () => {
                                             <label>Proof Identification : <span style={span}>{profile.user_proof_identification}</span></label>
                                         </Grid>
                                         <Grid item lg={3} md={6} sm={6} xs={12}>
-                                            <img src={"https://agsdev.online/public/app_images/members/"+profile.agrawal_image} style={{width:'40px',height:'40px'}}/>
+                                            <img src={"https://agrawalsamaj.co/public/app_images/members/"+profile.agrawal_image} style={{width:'40px',height:'40px'}}/>
                                         </Grid>
                                         <Grid item lg={3} md={6} sm={6} xs={12}>
-                                            <img src={"https://agsdev.online/public/app_images/documents/"+profile.agrawal_image} style={{width:'40px',height:'40px'}}/>
+                                            <img src={"https://agrawalsamaj.co/public/app_images/documents/"+profile.agrawal_image} style={{width:'40px',height:'40px'}}/>
                                         </Grid>
                                         <Grid item lg={12} md={12} sm={12} xs={12}>
                                             <h3>Family Information</h3>

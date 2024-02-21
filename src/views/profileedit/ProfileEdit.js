@@ -467,7 +467,7 @@ const ProfileEdit = () => {
             },
         }).then((res) => {
             if(res.data.code == '200'){
-                toast.success("Data updated Successfully", {
+                toast.success("Profile updated Successfully", {
                     type: 'Success',
                     position: "top-right",
                     autoClose: 5000,
@@ -480,7 +480,7 @@ const ProfileEdit = () => {
                 });
                 
             }else{
-                toast.error("Data is not updated", {
+                toast.error("Profile is not updated", {
                     type: 'error',
                     position: "top-right",
                     autoClose: 5000,
@@ -685,6 +685,23 @@ const ProfileEdit = () => {
                                         </Grid>
                                         <Grid item lg={2} md={6} sm={6} xs={12}>
                                             <TextField
+                                                name="user_proof_docs"
+                                                type="file"
+                                                InputLabelProps={{
+                                                    shrink: true,
+                                                }}
+                                                onChange={(e) => setSelectedFileDoc(e.target.files[0])}
+                                                value={profile.user_proof_docs}
+                                                label='Upload your document proof'
+                                                className={classes.notchedOutline}
+                                                fullWidth
+                                            />
+                                        </Grid>
+                                        <Grid item lg={1} md={6} sm={6} xs={12}>
+                                            <img src={"https://agrawalsamaj.co/public/app_images/documents/"+profile.user_proof_doc} style={{width:'40px',height:'40px'}}/>
+                                        </Grid>
+                                        <Grid item lg={2} md={6} sm={6} xs={12}>
+                                            <TextField
                                                 name="agrawal_images"
                                                 type="file"
                                                 InputLabelProps={{
@@ -700,23 +717,7 @@ const ProfileEdit = () => {
                                         <Grid item lg={1} md={6} sm={6} xs={12}>
                                             <img src={"https://agrawalsamaj.co/public/app_images/members/"+profile.agrawal_image} style={{width:'40px',height:'40px'}}/>
                                         </Grid>
-                                        <Grid item lg={2} md={6} sm={6} xs={12}>
-                                            <TextField
-                                                name="user_proof_docs"
-                                                type="file"
-                                                InputLabelProps={{
-                                                    shrink: true,
-                                                }}
-                                                onChange={(e) => setSelectedFileDoc(e.target.files[0])}
-                                                value={profile.user_proof_docs}
-                                                label='User Image'
-                                                className={classes.notchedOutline}
-                                                fullWidth
-                                            />
-                                        </Grid>
-                                        <Grid item lg={1} md={6} sm={6} xs={12}>
-                                            <img src={"https://agrawalsamaj.co/public/app_images/documents/"+profile.agrawal_image} style={{width:'40px',height:'40px'}}/>
-                                        </Grid>
+                                        
                                         <Grid item lg={12} md={12} sm={12} xs={12}>
                                             <h3>Family Information</h3>
                                             <hr/>

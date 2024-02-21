@@ -91,30 +91,13 @@ const NewMID = () => {
                 
                 setmidData(res.data.member_data);
                 setmidNewDataType(res.data.member_data.member_type);
+                setmidNewData(res.data.new_mid);
                 console.log("debug",res.data.member_data.member_type);
               });
         }
     }, []);
 
-    useEffect(() => {
-        var isLoggedIn = localStorage.getItem("login");
-        if(!isLoggedIn){
-            window.location = "/login";
-        
-        }else{
-            axios({
-                url: baseURL+"/fetch-web-new-mid/"+midnewDatatype,
-                method: "GET",
-                headers: {
-                  Authorization: `Bearer ${localStorage.getItem("login")}`,
-                },
-              }).then((res) => {
-                
-                setmidNewData(res.data.new_mid);
-                
-              });
-        }
-    }, []);
+    
 
     const onSubmit = (e) => {
 
@@ -150,6 +133,7 @@ const NewMID = () => {
                     draggable: true,
                     progress: undefined,
                     theme: "dark",
+                    onClose: () => history.push('/new-register')
                 });
                 
             }else{

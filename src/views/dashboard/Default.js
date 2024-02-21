@@ -42,12 +42,16 @@ const Dashboard = () => {
         <Grid container spacing={gridSpacing}>
             <Grid item xs={12}>
                 <Grid container spacing={gridSpacing}>
-                    <Grid item lg={4} md={6} sm={6} xs={12}>
+                    <Grid item lg={12} md={12} sm={12} xs={12}>
+                        <h1 style={{textAlign:'center'}}>Coming Soon</h1>
+                    </Grid>
+                    
+                    {/* <Grid item lg={4} md={6} sm={6} xs={12}>
                         <EarningCard total_patron_life_member={total_patron_life_member}/>
                     </Grid>
                     <Grid item lg={4} md={6} sm={6} xs={12}>
                         <TotalChartCard total_life_member={total_life_member}/>
-                    </Grid>
+                    </Grid> */}
                 </Grid>
             </Grid>
         </Grid>

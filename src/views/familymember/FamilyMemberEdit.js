@@ -147,6 +147,7 @@ const FamilyMemberEdit = () => {
                     draggable: true,
                     progress: undefined,
                     theme: "dark",
+                    onClose: () => history.push('/family-member-list')
                 });
             }else{
                 toast.error("Data  not Update Successfully", {

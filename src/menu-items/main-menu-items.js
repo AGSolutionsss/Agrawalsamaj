@@ -46,7 +46,10 @@ import {
     IconTools,
     IconTypography,
     IconUser,
-    IconUserCheck
+    IconUserCheck,
+    IconUserPlus,
+    IconUsers,
+    IconWoman
 } from '@tabler/icons';
 
 const icons = {
@@ -80,6 +83,7 @@ const icons = {
     IconBrandGravatar: IconBrandGravatar,
     IconShape: IconShape,
     IconUserCheck: IconUserCheck,
+    IconUserPlus: IconUserPlus,
     IconId: IconId,
     IconLayoutList: IconLayoutList,
     IconBug: IconBug,
@@ -96,7 +100,9 @@ const icons = {
     IconBellRinging: IconBellRinging,
     IconBorderAll: IconBorderAll,
     IconChartCandle: IconChartCandle,
-    IconBasket: IconBasket
+    IconBasket: IconBasket,
+    IconUsers: IconUsers,
+    IconWoman: IconWoman,
 };
 
 
@@ -122,7 +128,7 @@ const icons = {
                         title: <FormattedMessage id="Profile" />,
                         type: 'item',
                         url: '/profile-edit',
-                        icon: icons['IconUserCheck'],
+                        icon: icons['IconUser'],
                         
                     },
                     {
@@ -130,7 +136,7 @@ const icons = {
                         title: <FormattedMessage id="Family Member" />,
                         type: 'item',
                         url: '/family-member-list',
-                        icon: icons['IconUserCheck'],
+                        icon: icons['IconUsers'],
                         
                     },
                 ]
@@ -152,7 +158,7 @@ const icons = {
                         title: <FormattedMessage id="Mahila" />,
                         type: 'item',
                         url: '/mahila-events',
-                        icon: icons['IconPencil'],
+                        icon: icons['IconCalendar'],
                         
                     },
                     {
@@ -160,7 +166,7 @@ const icons = {
                         title: <FormattedMessage id="Developer" />,
                         type: 'item',
                         url: '/developer',
-                        icon: icons['IconCalendar'],
+                        icon: icons['IconLockAccess'],
                         
                     },
                     
@@ -191,7 +197,7 @@ const icons = {
                         title: <FormattedMessage id="Life Time Members" />,
                         type: 'item',
                         url: '/life-time-members',
-                        icon: icons['IconUser'],
+                        icon: icons['IconUsers'],
                         
                     },
                     {
@@ -199,7 +205,7 @@ const icons = {
                         title: <FormattedMessage id="Patron Members" />,
                         type: 'item',
                         url: '/patron-members',
-                        icon: icons['IconUserCheck'],
+                        icon: icons['IconUsers'],
                         
                     },
                     {
@@ -215,9 +221,10 @@ const icons = {
                         title: <FormattedMessage id="New Register" />,
                         type: 'item',
                         url: '/new-register',
-                        icon: icons['IconUserCheck'],
+                        icon: icons['IconUserPlus'],
                         
                     },
+                    
                 ]
             },
             {
@@ -237,7 +244,7 @@ const icons = {
                         title: <FormattedMessage id="Mahila" />,
                         type: 'item',
                         url: '/mahila-events',
-                        icon: icons['IconPencil'],
+                        icon: icons['IconCalendar'],
                         
                     },
                     {
@@ -245,7 +252,7 @@ const icons = {
                         title: <FormattedMessage id="Developer" />,
                         type: 'item',
                         url: '/developer',
-                        icon: icons['IconCalendar'],
+                        icon: icons['IconLockAccess'],
                         
                     },
                     
@@ -255,7 +262,7 @@ const icons = {
         ]
     };
 
-const menuItems = localStorage.getItem('user_type_id') === '1' ? menuItems1 : menuItems2;
+const menuItems = localStorage.getItem('user_type_id') === '2' ? menuItems2 : menuItems1;
 
 export default menuItems;
 
